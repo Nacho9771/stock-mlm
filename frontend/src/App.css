@@ -1,3 +1,30 @@
+.video-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.bg-video.left {
+  clip-path: inset(0 50% 0 0);
+  transform: translateX(-6%);
+}
+
+/* RIGHT HALF */
+.bg-video.right {
+  clip-path: inset(0 0 0 50%);
+  transform: translateX(6%);
+}
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;
@@ -58,11 +85,14 @@
 
 #center {
   display: flex;
+  position: relative;
+  z-index: 1;
   flex-direction: column;
   gap: 25px;
   place-content: center;
   place-items: center;
   flex-grow: 1;
+  background: #fff;
 
   @media (max-width: 1024px) {
     padding: 32px 20px 24px;
@@ -72,12 +102,16 @@
 
 #next-steps {
   display: flex;
+  position: relative;
+  z-index: 1;
+  background: #fff;
   border-top: 1px solid var(--border);
   text-align: left;
 
   & > div {
     flex: 1 1 0;
     padding: 32px;
+    background: #fff;
     @media (max-width: 1024px) {
       padding: 24px 20px;
     }
@@ -155,6 +189,9 @@
 
 #spacer {
   height: 88px;
+  position: relative;
+  z-index: 1;
+  background: #fff;
   border-top: 1px solid var(--border);
   @media (max-width: 1024px) {
     height: 48px;
